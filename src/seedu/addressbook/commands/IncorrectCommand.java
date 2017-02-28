@@ -13,13 +13,8 @@ public class IncorrectCommand extends Command{
     }
 
     @Override
-    public CommandResult execute(ReadOnlyCommand previousCommand) {
+    public CommandResult execute() {
         return new CommandResult(feedbackToUser);
-    }
-
-    @Override
-    public String getCommandWord() {
-        return null;
     }
 
 }

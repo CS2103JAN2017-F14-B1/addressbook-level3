@@ -18,14 +18,8 @@ public class ListCommand extends Command {
 
 
     @Override
-    public CommandResult execute(ReadOnlyCommand previousCommand) {
+    public CommandResult execute() {
         List<ReadOnlyPerson> allPersons = addressBook.getAllPersons().immutableListView();
         return new CommandResult(getMessageForPersonListShownSummary(allPersons), allPersons);
-    }
-
-
-    @Override
-    public String getCommandWord() {
-        return COMMAND_WORD;
     }
 }

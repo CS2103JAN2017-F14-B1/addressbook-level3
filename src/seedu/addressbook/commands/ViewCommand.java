@@ -26,7 +26,7 @@ public class ViewCommand extends Command {
 
 
     @Override
-    public CommandResult execute(ReadOnlyCommand previousCommand) {
+    public CommandResult execute() {
         try {
             final ReadOnlyPerson target = getTargetPerson();
             if (!addressBook.containsPerson(target)) {
@@ -36,12 +36,6 @@ public class ViewCommand extends Command {
         } catch (IndexOutOfBoundsException ie) {
             return new CommandResult(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
-    }
-
-
-    @Override
-    public String getCommandWord() {
-        return COMMAND_WORD;
     }
 
 }
